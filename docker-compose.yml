@@ -3,8 +3,13 @@ services:
 
     shadowsocks:
         image: shadowsocks/shadowsocks-libev
+        restart: always
         environment:
             PASSWORD: ${SHADOWSOCKS_PASSWORD}
+
+    kcptun:
+        build: kcptun/docker
+        environment:
+            KCPTUN_KEY: ${KCPTUN_KEY}
         ports:
-            - ${SHADOWSOCKS_PORT}:8388
-            - ${SHADOWSOCKS_PORT}:8388/udp
+            - "${KCPTUN_PORT}:29900/udp"
