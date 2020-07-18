@@ -1,2 +1,2 @@
 # shadowsocks-kcptun
-shadowsocks with kcptun
+shadowsocks with kcptun by docker
