@@ -11,5 +11,9 @@ RUN set -xe \
     && curl -sSL ${KCPTUN_URL} | tar xz -C /usr/local/bin \
     && apk del curl
 
-ENTRYPOINT ["server_linux_amd64"]
-CMD ["--target", "shadowsocks:8388", "--mode", "fast3", "--nocomp", "--sockbuf", "16777217", "--dscp", "46"]
+ENTRYPOINT ["server_linux_amd64", "--target", "shadowsocks:8388"]
+ENV MODE=fast3
+ENV SOCKBUF=16777217
+ENV DSCP=46
+ENV AUTOEXPIRE=900
+CMD ["--mode", "${MODE}", "--sockbuf", "${SOCKBUF}", "--dscp", "${DSCP}", "--autoexpire", "${AUTOEXPIRE}", "--nocomp"]
