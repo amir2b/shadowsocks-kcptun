@@ -30,6 +30,8 @@ services:
             net.core.wmem_max: 26214400
             net.core.wmem_default: 26214400
             net.core.netdev_max_backlog: 2048
+        depends_on:
+            - shadowsocks
         logging:
             options:
                 max-size: "1m"
