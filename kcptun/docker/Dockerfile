@@ -16,4 +16,4 @@ ENV MODE=fast3
 ENV SOCKBUF=16777217
 ENV DSCP=46
 ENV AUTOEXPIRE=900
-CMD ["--mode", "${MODE}", "--sockbuf", "${SOCKBUF}", "--dscp", "${DSCP}", "--autoexpire", "${AUTOEXPIRE}", "--nocomp"]
+CMD ["--mode", "${MODE}", "--sockbuf", ${SOCKBUF}, "--dscp", ${DSCP}, "--autoexpire", ${AUTOEXPIRE}, "--nocomp"]
